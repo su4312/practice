@@ -33,12 +33,14 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("OnCollisionEnter2D");
+        Debug.Log("碰到地板");
+        other.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("OnTriggerEnter2D");
+        Debug.Log("碰到區域");
+        gameObject.SetActive(false);
     }
 
     private void OnTriggerExit2D(Collider2D other)
