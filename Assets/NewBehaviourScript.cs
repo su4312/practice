@@ -4,7 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
+
 {
+    [SerializeField] 
+    private GameObject box;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -33,14 +38,16 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("碰到地板");
-        other.gameObject.SetActive(false);
+        // Debug.Log("碰到地板");
+        // other.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("碰到區域");
-        gameObject.SetActive(false);
+        box.SetActive(true);
+        // GameObject box = GameObject.Find("方塊");
+        // Debug.Log("碰到區域");
+        // gameObject.SetActive(false);
     }
 
     private void OnTriggerExit2D(Collider2D other)
